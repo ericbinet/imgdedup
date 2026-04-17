@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imgdedup"
+version = "1.0.0b1"
+description = "Find near-duplicate images across large collections"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Eric Binet", email = "22279070+ericbinet@users.noreply.github.com"}]
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "imagehash>=4.3",
+    "Pillow>=10.0",
+    "numpy>=1.24",
+    "opencv-python>=4.8",
+    "scikit-image>=0.21",
+    "pybktree>=1.1",
+    "tqdm>=4.66",
+    "rich>=13.0",
+    "send2trash>=1.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+imgdedup = "imgdedup.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ericbinet/imgdedup"
+Issues = "https://github.com/ericbinet/imgdedup/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["imgdedup*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"

@@ -1,0 +1,10 @@
+imagehash>=4.3
+Pillow>=10.0
+numpy>=1.24
+opencv-python>=4.8
+scikit-image>=0.21
+pybktree>=1.1
+# rawpy>=0.19  # optional: install manually for RAW format support
+tqdm>=4.66
+rich>=13.0
+send2trash>=1.8
